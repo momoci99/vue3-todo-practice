@@ -18,3 +18,12 @@ import TodoList from "@/components/TodoList.vue";
 })
 export default class Layout extends Vue {}
 </script>
+<style lang="scss">
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+}
+</style>
