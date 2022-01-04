@@ -15,8 +15,8 @@ export default createStore({
     clearTodo(state) {
       state.todoList = [];
     },
-    removeTodo(state, index: number) {
-      state.todoList.splice(index, 1);
+    removeTodo(state, id: string) {
+      state.todoList.splice(state.todoList.indexOf(id), 1);
     },
   },
   actions: {
@@ -26,8 +26,8 @@ export default createStore({
     clearTodo({ commit }) {
       commit("clearTodo");
     },
-    removeTodo({ commit }, index: number) {
-      commit("removeTodo", index);
+    removeTodo({ commit }, id: string) {
+      commit("removeTodo", id);
     },
   },
   modules: {},
