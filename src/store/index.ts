@@ -30,5 +30,8 @@ export default createStore({
       commit("removeTodo", id);
     },
   },
+  getters: {
+    todoList: (state) => state.todoList,
+  },
   modules: {},
 });

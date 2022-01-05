@@ -9,6 +9,7 @@
 </template>
 
 <script lang="ts">
+import { mapGetters } from "vuex";
 import { Options, Vue } from "vue-class-component";
 import TodoListItem from "@/components/TodoListItem.vue";
 
@@ -16,10 +17,8 @@ import TodoListItem from "@/components/TodoListItem.vue";
 	components: {
 		TodoListItem,
 	},
-	data() {
-		return {
-			todoList: ["todo1", "todo2", "todo3"],
-		};
+	computed: {
+		...mapGetters(["todoList"]),
 	},
 })
 export default class TodoList extends Vue {}
