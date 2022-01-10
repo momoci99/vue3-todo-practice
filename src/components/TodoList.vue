@@ -1,9 +1,9 @@
 <template>
 	<div class="todos">
 		<TodoListItem
-			v-for="(todo, index) in todoList"
-			:description="todo"
-			:key="index"
+			v-for="todo in todoList"
+			:description="todo.description"
+			:key="todo.id"
 		></TodoListItem>
 	</div>
 </template>

@@ -1,4 +1,10 @@
 import { createStore } from "vuex";
+import { v4 as uuidv4 } from "uuid";
+
+interface Todo {
+  id: string;
+  description: string;
+}
 
 // interface State {
 //   todoList: Array<string>;
@@ -6,17 +12,26 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    todoList: [] as Array<string>,
+    todoList: [] as Array<Todo>,
   },
   mutations: {
-    addTodo(state, todo: string) {
-      state.todoList.push(todo);
+    addTodo(state, description: string) {
+      const id = uuidv4();
+      state.todoList.push({
+        id,
+        description,
+      });
     },
     clearTodo(state) {
       state.todoList = [];
     },
     removeTodo(state, id: string) {
-      state.todoList.splice(state.todoList.indexOf(id), 1);
+      state.todoList.splice(
+        state.todoList.findIndex((todo: Todo) => {
+          return todo.id === id;
+        }),
+        1
+      );
     },
   },
   actions: {
