@@ -1,25 +1,19 @@
 <template>
 	<article class="todo-list-item">
 		<p class="item-description">{{ description }}</p>
-		<button class="item-delete" @click="deleteTodo">delete</button>
+		<button class="item-delete" @click="$emit('remove', id)">delete</button>
 	</article>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import { mapActions } from "vuex";
 
 @Options({
 	components: {},
 	props: ["id", "description"],
+	emits: ["remove"],
 	setup(props) {
 		console.log(props);
-	},
-	methods: {
-		...mapActions(["removeTodo"]),
-		deleteTodo() {
-			this.removeTodo(this.id);
-		},
 	},
 })
 export default class TodoListItem extends Vue {}
