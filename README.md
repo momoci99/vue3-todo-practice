@@ -2,6 +2,13 @@
 
 Simple todo list app using Vue.js.
 
+I just want to try something list
+
+- [ ] (Add text code)
+- [ ] (Add export feature)
+- [ ] (Connect fire base)
+- [ ] (Make more pretty)
+
 ## Project setup
 
 ```
