@@ -20,6 +20,8 @@ export default class Layout extends Vue {}
 </script>
 <style lang="scss">
 .container {
+	// background: #6f4c5b;
+	background: #f5e8c7;
 	display: flex;
 	justify-content: center;
 	align-items: center;
